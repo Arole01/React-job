@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const navLinks = [
   {
@@ -39,13 +39,15 @@ function TopNav() {
               <div className="flex space-x-2">
                 {navLinks.map((link) => {
                   return (
-                    <Link
+                    <NavLink
                       key={link.title}
                       to={link.href}
-                      className="px-3 py-2 text-white rounded-md hover:bg-gray-900 hover:text-white"
+                      className={({ isActive }) =>
+                        `px-3 py-2 text-white rounded-md hover:bg-gray-900 hover:text-white ${isActive ? "bg-black" : null}`
+                      }
                     >
                       {link.title}
-                    </Link>
+                    </NavLink>
                   );
                 })}
                 {/* <a

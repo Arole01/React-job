@@ -1,7 +1,8 @@
-import TopNav from "../components/top-nav";
-import Hero from "../components/hero";
-import DevEmp from "../components/dev-emp";
-import BrowseJobs from "../components/browse-jobs";
+import TopNav from "../components/layouts/top-nav";
+import Hero from "../components/home/hero";
+import DevEmp from "../components/home/dev-emp";
+import BrowseJobs from "../components/shared/browse-jobs";
+import jobs from "../data/jobs";
 
 function Home() {
   return (
@@ -10,7 +11,7 @@ function Home() {
       <Hero />
       {/* <Hero title="John" subtitle="Doe" /> */}
       <DevEmp />
-      <BrowseJobs />
+      <BrowseJobs jobs={jobs.slice(-3)} />
 
       {/* <!-- Browse Jobs --> */}
 
